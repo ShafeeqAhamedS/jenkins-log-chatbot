@@ -20,10 +20,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["*"],  # Allows all origins (you can specify a list of origins)
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allows all methods like GET, POST, etc.
+    allow_headers=["*"],  # Allows all headers
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -139,6 +139,13 @@ def load_log(data: LogData):
         "job_name": data.job_name,
         "build_number": data.build_number,
         "log": data.log,
+        "memory": f"User: Added Logs\nLOGS:{data.log}",
+        "history": {
+          str(int(datetime.datetime.now().timestamp())) : {
+                "user": f"LOG ADDED\n{data.log}",
+                "gemini": "Thanks for giving the log. Please ask your question"
+            }
+        }
     }
 
     write_data_to_file(logs_data)

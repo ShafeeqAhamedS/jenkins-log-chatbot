@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'http://3.80.102.81:8000';
 
 export const getChats = async () => {
     try {

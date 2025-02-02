@@ -10,7 +10,7 @@ export const shuffleArray = (array) => {
 };
 
 export const handleNewChat = (setNewChat) => {
-  window.location.href = "http://localhost:5173";
+  window.location.href = "/";
   setNewChat(prev => !prev);
 };
 
