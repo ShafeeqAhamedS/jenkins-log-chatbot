@@ -35,7 +35,13 @@ function ChatComponent() {
           onChange={(e) => handleInput(e, setInput, textareaRef)}
           className="px-4 py-4 resize-none overflow-x-hidden border-0 max-h-36 focus-visible:ring-transparent"
           onKeyDown={(e) => {
-            if (e.key === "Enter" && !loading) {
+            if (e.key === "Enter" && e.shiftKey) {
+              e.preventDefault();
+              const { selectionStart, selectionEnd } = e.target;
+              const newValue = input.substring(0, selectionStart) + "\n" + input.substring(selectionEnd);
+              setInput(newValue);
+              textareaRef.current.setSelectionRange(selectionStart + 1, selectionStart + 1);
+            } else if (e.key === "Enter" && !loading) {
               sendMessageHandler(e, input, setInput, setMessages, setLoading, uniqueKey, setUniqueKey);
             }
           }}
