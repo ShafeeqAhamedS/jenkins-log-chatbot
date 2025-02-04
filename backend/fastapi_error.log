@@ -75,3 +75,34 @@ INFO:root:Reading data from ./data/logs_data.json
 INFO:root:History retrieved successfully for unique_key: fdd105a680c4
 INFO:root:Fetching history of all builds.
 INFO:root:Reading data from ./data/logs_data.json
+INFO:root:Root endpoint accessed.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:root:Root endpoint accessed.
+INFO:root:Fetching history of all builds.
+INFO:root:Reading data from ./data/logs_data.json
+INFO:root:Fetching history of all builds.
+INFO:root:Reading data from ./data/logs_data.json
+INFO:root:Fetching history of all builds.
+INFO:root:Reading data from ./data/logs_data.json
+INFO:root:Fetching history of all builds.
+INFO:root:Reading data from ./data/logs_data.json
+INFO:root:Fetching history of all builds.
+INFO:root:Reading data from ./data/logs_data.json
+INFO:root:Retrieving history for unique_key: 1dbf59287172
+INFO:root:Reading data from ./data/logs_data.json
+INFO:root:History retrieved successfully for unique_key: 1dbf59287172
+INFO:root:Fetching history of all builds.
+INFO:root:Reading data from ./data/logs_data.json
+INFO:root:Root endpoint accessed.
+INFO:root:Root endpoint accessed.
+INFO:root:Root endpoint accessed.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:root:Root endpoint accessed.
+INFO:root:Root endpoint accessed.
+INFO:root:Root endpoint accessed.
+INFO:root:Root endpoint accessed.
+WARNING:  Invalid HTTP request received.
+INFO:root:Root endpoint accessed.
+INFO:root:Root endpoint accessed.
