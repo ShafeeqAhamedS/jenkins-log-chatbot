@@ -6,7 +6,7 @@ pipeline {
         PYTHON_SCRIPT_PATH = "/var/lib/jenkins/jobs/main.py"
         GEMINI_API_KEY = credentials('GEMINI_API_KEY')
         GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
-        BASE_URL = readFile("./BASE_URL.txt")
+        BASE_URL = "http://54.91.213.21"
     }
     stages {
         stage('Detect Newly Failed Build') {

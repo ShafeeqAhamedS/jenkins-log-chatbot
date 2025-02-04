@@ -1,8 +1,6 @@
 import axios from 'axios';
-import fs from 'fs';
 
-const BASE_URL_PATH = `~/jenkins-log-chatbot/BASE_URL.txt`
-const BASE_URL = fs.readFileSync(BASE_URL_PATH, 'utf-8').trim();
+const BASE_URL = "http://54.91.213.21"
 
 export const getChats = async () => {
     try {
