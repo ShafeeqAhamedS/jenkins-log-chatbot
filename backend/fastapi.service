@@ -1,0 +1,13 @@
+[Unit]
+Description=FastAPI application
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/jenkins-log-chatbot/backend
+ExecStart=/home/ubuntu/jenkins-log-chatbot/backend/venv/bin/uvicorn main:app --reload --host 0.0.0.0 --port 8000
+Restart=always
+Environment="PATH=/home/ubuntu/jenkins-log-chatbot/backend/venv/bin"
+
+[Install]
+WantedBy=multi-user.target
