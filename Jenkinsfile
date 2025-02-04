@@ -13,6 +13,8 @@ pipeline {
             steps {
                 script {
                     try {
+                        echo "BASE URL: ${BASE_URL}"
+                        
                         echo "Starting 'Detect Newly Failed Build' stage"
                         // Read the content of the file containing previous failed builds
                         def fileContent = fileExists(env.FILE_PATH) ? readFile(env.FILE_PATH) : ""
