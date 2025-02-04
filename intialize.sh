@@ -16,7 +16,7 @@ echo "NPM version: $(npm -v)"
 
 echo "Installing Java..."
 sudo apt install fontconfig openjdk-17-jre -y
-echo "Java version: $(java -version)"
+echo "Java version: $(java --version)"
 
 echo "Adding Jenkins repository and installing Jenkins..."
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
@@ -35,7 +35,7 @@ sudo systemctl start nginx
 echo "Nginx started."
 
 echo "Building frontend..."
-cd ~/jenkins-log-chatbot/frontend
+cd frontend
 npm i
 npm run build
 sudo cp -r dist/* /var/www/html/
@@ -43,7 +43,7 @@ sudo systemctl restart nginx
 echo "Frontend built."
 
 echo "Setting up backend..."
-cd ~/jenkins-log-chatbot/backend
+cd ..
 cd backend
 python3 -m venv venv
 source venv/bin/activate
@@ -51,7 +51,8 @@ pip install -r requirements.txt
 echo "Backend setup complete."
 
 echo "Configuring FastAPI service..."
-sudo cp fastapi.service /etc/systemd/system/ 
+sudo touch /etc/systemd/system/fastapi.service
+sudo cat fastapi.service > /etc/systemd/system/fastapi.service
 sudo systemctl daemon-reload
 sudo systemctl enable fastapi
 sudo systemctl start fastapi
